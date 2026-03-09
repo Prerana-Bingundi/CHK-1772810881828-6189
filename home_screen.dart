@@ -1,26 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../language/language_provider.dart';
-import '../language/app_translations.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    String lang =
-        Provider.of<LanguageProvider>(context).locale.languageCode;
-
     return Scaffold(
+      backgroundColor: const Color(0xff0d1b2a),
       appBar: AppBar(
-        title: Text(AppTranslations.text(lang, 'title')),
+        backgroundColor: const Color(0xff0d1b2a),
+        foregroundColor: Colors.white,
+        title: const Text("Home"),
       ),
-
-      body: Center(
-        child: Text(
-          AppTranslations.text(lang, 'welcome'),
-          style: TextStyle(fontSize: 22),
-        ),
+      body: const Center(
+        child: Text("Home Screen", style: TextStyle(color: Colors.white)),
       ),
     );
   }
